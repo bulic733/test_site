@@ -1,41 +1,109 @@
 <!DOCTYPE html>
-<html lang="ru"> <!-- prefix? https://doka.guide/html/html/#:~:text=prefix%20%E2%80%94%20%D0%B7%D0%B4%D0%B5%D1%81%D1%8C%20%D0%BF%D1%80%D0%BE%D0%BF%D0%B8%D1%81%D1%8B%D0%B2%D0%B0%D1%8E%D1%82%20open%2Dgraph%20%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D1%83%2C%20%D1%82%D0%B8%D0%BF%D0%B0%20%3Chtml%20lang%3D%22ru%2DRU%22%20prefix%3D%22og%3A%20%5Bhttp%3A//ogp.me/ns%23%5D(http%3A//ogp.me/ns%23)%22%3E.%20%D0%AD%D1%82%D0%BE%20%D1%87%D1%82%D0%BE%D0%B1%D1%8B%20%D0%BF%D1%80%D0%B8%20%D1%80%D0%B5%D0%BF%D0%BE%D1%81%D1%82%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%B2%20VK%2C%20Facebook%20%D0%B8%20%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%B5%20%D1%81%D0%BE%D1%86%D1%81%D0%B5%D1%82%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D0%B2%D0%B0%D0%BB%D0%B8%D1%81%D1%8C%20%D1%82%D0%B5%20%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B8%2C%20%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%BC%D1%8B%20%D1%83%D0%BA%D0%B0%D0%B6%D0%B5%D0%BC.-->
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+      Считаю, что описание не нужно, так как сайт только для ТГ бота
+        <meta name="description" content="Описание страницы">
+        <meta name="keywords" content="ключевые слова">
+        <meta name="author" content="Автор">
+    -->
     <title>Wish List</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Подключение CSS -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        /* Стиль для всего, что есть на странице */
+        * {
+            margin: 10;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+        /* Стиль для body */
+        body {
+            font-weight: 200;
+            color: var(-tg-theme-text-color);
+            background: var(-tg-theme-bg-color);
+        }
+        /* Стиль для блока main (<... id="main">
+        #main {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        /* Стиль для блока h1 */
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+        /* Стиль для блока img */
+        img {
+            width: 70px;
+            margin: 30px auto;
+        }
+        /* Стиль для блока p */
+        p {
+            width: 350px;
+            margin: 0 auto;
+        }
+        /* стиль кнопки */
+        button {
+            border: 0;
+            border-radius: 5px;
+            margin-top: 50px;
+            height: 60px;
+            width: 200px;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease; /* скорость смены при наведении или нажатии */
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
+        }
+        /* стиль кнопки при наведении или нажатии */
+        button:hover {
+            background: var(--tg-theme-secondary-bg-color);
+        }
+
+        /* usage: <... class="pacifico-regular">
+        .pacifico-regular {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        } */
+
+        #form {
+            display: none;
+            text-align: center;
+        }
+        input {
+            width: 90%;
+            outline: none;
+            margin: 10px 5%;
+            padding: 15px 18px;
+            font-size: 14px;
+            border: 2px solid silver;
+            border-radius: 5px;
+        }
+        input:focus {
+            border-color: #db5d5d;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Добро пожаловать на мой сайт!</h1>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#home">Гла1вная</a></li>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#contact">Контакты</a></li>
-        </ul>
-    </nav>
-
-    <section id="home">
-        <h2>Главная страница</h2>
-        <p>Это пример текста на главной странице.</p>
-    </section>
-
-    <section id="about">
-        <h2>О нас</h2>
-        <p>Информация о компании...</p>
-    </section>
-
-    <section id="contact">
-        <h2>Контакты</h2>
-        <p>Напишите нам!</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Мой сайт</p>
-    </footer>
+    <div id="main">
+        <h1>Онлайн магазин</h1>
+        <img src=" https://cdn-icons-png.flaticon.com/512/3595/3595455.png ">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ipsum magni, molestias.</p>
+        <button id="buy">Купить</button>
+    </div>
+    <form id="form">
+        <input type="text" placeholder="Имя" id="user_name">
+        <input type="text" placeholder="Email" id="user_email">
+        <input type="text" placeholder="Телефон" id="user_phone">
+        <button id="order">Оформить</button>
+    </form>
 </body>
 </html>
