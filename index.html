@@ -3,16 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--
-      Считаю, что описание не нужно, так как сайт только для ТГ бота
-        <meta name="description" content="Описание страницы">
-        <meta name="keywords" content="ключевые слова">
-        <meta name="author" content="Автор">
-    -->
     <title>Wish List</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-        /* Стиль для всего, что есть на странице */
         * {
             margin: 10;
             padding: 0;
@@ -20,38 +13,19 @@
             font-family: "Pacifico", cursive;
             font-weight: 400;
             font-style: normal;
+            background: rgb(50, 50, 150) /*var(--tg-theme-button-text-color);*/
         }
-        /* Стиль для body */
-        body {
-            font-weight: 200;
-            color: var(-tg-theme-text-color);
-            background: var(-tg-theme-bg-color);
-        }
-        /* Стиль для блока main (<... id="main">
-        #main {
-            width: 100%;
-            padding: 20px;
+
+        h1 {
+            margin-top: 20px;
+            margin-bottom: 10px;
             text-align: center;
         }
-        /* Стиль для блока h1 */
-        h1 {
-            margin-top: 50px;
-            margin-bottom: 10px;
-        }
-        /* Стиль для блока img */
-        img {
-            width: 70px;
-            margin: 30px auto;
-        }
-        /* Стиль для блока p */
-        p {
-            width: 350px;
-            margin: 0 auto;
-        }
+
         /* стиль кнопки */
         button {
-            border: 0;
-            border-radius: 5px;
+            border: ;
+            border-radius: 15px;
             margin-top: 50px;
             height: 60px;
             width: 200px;
@@ -59,51 +33,25 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 500ms ease; /* скорость смены при наведении или нажатии */
-            color: var(--tg-theme-button-color);
-            background: var(--tg-theme-button-text-color);
+            color: black /*var(--tg-theme-button-color)*/;
+            background: rgb(255, 0, 0) /*var(--tg-theme-button-text-color)*/;
         }
         /* стиль кнопки при наведении или нажатии */
         button:hover {
-            background: var(--tg-theme-secondary-bg-color);
-        }
-
-        /* usage: <... class="pacifico-regular">
-        .pacifico-regular {
-            font-family: "Montserrat", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-        } */
-
-        #form {
-            display: none;
-            text-align: center;
-        }
-        input {
-            width: 90%;
-            outline: none;
-            margin: 10px 5%;
-            padding: 15px 18px;
-            font-size: 14px;
-            border: 2px solid silver;
-            border-radius: 5px;
-        }
-        input:focus {
-            border-color: #db5d5d;
+            background: green;
         }
     </style>
 </head>
 <body>
-    <div id="main">
-        <h1>Онлайн магазин</h1>
-        <img src=" https://cdn-icons-png.flaticon.com/512/3595/3595455.png ">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ipsum magni, molestias.</p>
-        <button id="buy">Купить</button>
-    </div>
-    <form id="form">
-        <input type="text" placeholder="Имя" id="user_name">
-        <input type="text" placeholder="Email" id="user_email">
-        <input type="text" placeholder="Телефон" id="user_phone">
-        <button id="order">Оформить</button>
-    </form>
+    <h1>
+        Это список желаний @username
+    </h1>
+
+    <button>
+        Добавить желание
+    </button>
+    <button>
+        Добавить желание
+    </button>
 </body>
 </html>
