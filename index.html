@@ -84,7 +84,7 @@
         <input type="text" placeholder="Описание" id="description">
         <input type="text" placeholder="Ссылка (необязательно)" id="url">
         <div id="error"></div>
-        <button id="confirm">Сохранить</button>
+        <button id="save_wish">Сохранить</button>
     </form>
 
     <!-- <div id="wishlist">
@@ -99,8 +99,8 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
-        let add = document.getElementById("add_button")
-        let confirm = document.getElementById("confirm")
+        let add = document.getElementById("add_button");
+        let save_wish = document.getElementById("save_wish");
         add.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
             /*document.getElementById("wishlist").style.display = "none";*/
@@ -123,7 +123,7 @@
             }
             if(url.length > 0) {
                 const pattern = /^(https?:\/\/)?([a-z0-9-]+\.)+[a-z0-9]{2,6}(\/[^\s]*)?$/i;
-                if(!pattern.test(url) {
+                if(!pattern.test(url)) {
                     document.getElementById("error").innerText = "Укажите правильную ссылку (должна начинаться с http:// или https://";
                     return;
                 }
