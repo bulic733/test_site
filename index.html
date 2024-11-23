@@ -83,7 +83,7 @@
         <input type="text" placeholder="Название" id="name">
         <input type="text" placeholder="Описание" id="description">
         <input type="text" placeholder="Ссылка (необязательно)" id="url">
-        <div id="error"></div>
+        <div id="error" style="color: red"></div>
         <button id="save_wish">Сохранить</button>
     </form>
 
@@ -107,24 +107,24 @@
             document.getElementById("name").value = tg.initDataUnsafe.user.first_name;
         });
         confirm.addEventListener("click", () => {
-            
+
             let name = document.getElementById("name").value;
             let description = document.getElementById("description").value;
             let url = document.getElementById("url").value;
 
             if(name.length < 1) {
                 document.getElementById("error").innerText = 'Необходимо добавить короткое название желания';
-                
+
             }
             if(description.length < 1) {
                 document.getElementById("error").innerText = 'Необходимо добавить описание желания';
-                
+
             }
-            if(url.length > 0) {
+            if(url.length != 0) {
                 const pattern = /^(https?:\/\/)?([a-z0-9-]+\.)+[a-z0-9]{2,6}(\/[^\s]*)?$/i;
                 if(!pattern.test(url)) {
                     document.getElementById("error").innerText = 'Укажите правильную ссылку (должна начинаться с http:// или https://';
-                    
+
                 }
             }
             document.getElementById("error").innerText = 'QWE';
