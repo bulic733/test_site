@@ -46,24 +46,66 @@
         button:hover {
             background: green/*var(--th-theme-secondary-bg-color/*;
         }
+
+        #form {
+            display: none;
+            text-align: center;
+        }
+        input {
+            width: 90%;
+            outline: none;
+            margin: 10px 5%;
+            padding: 15px 18px;
+            font-size: 14px;
+            border: 2px solid silver;
+            border-radius: 5px;
+        }
+        input:focus {
+            border-color: #db5d5d;
+        }
     </style>
 </head>
 <body>
-    <h1 id="header">
-        Это список желаний @username
-    </h1>
+    <div id="main">
+        <h1 id="header">
+            Это список желаний @username
+        </h1>
+        <button id="add_button">
+            Добавить желание
+        </button>
+        <button id="share_button">
+            Поделиться ссылкой
+        </button>
+    </div>
 
-    <button id="add_button">
-        Добавить желание
-    </button>
-    <button id="share_button">
-        Поделиться ссылкой
-    </button>
+    <form id="form">
+        <input type="text" placeholder="Имя" id="user_name">
+        <input type="text" placeholder="Email" id="user_email">
+        <input type="text" placeholder="Телефон" id="user_phone">
+        <button id="confirm">Оформить</button>
+    </form>
+    <div id="wishlist">
+        <button>
+            желание раз
+        </button>
+        <button>
+            желание два
+        </button>
+    </div>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        let tg = windows.Telegram.WebApp;
-        document.getElementById("header").innerHTML = tg.initDataUnsafe.user.first_name;
+        let tg = window.Telegram.WebApp;
+        let add = document.getElementById("add_button")
+        let confirm = document.getElementById("confirm")
+        add.addEventListener("click", () => {
+            document.getElementById("main").style.display = "none";
+            document.getElementById("form").style.display = "block";
+            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name;
+        });
+        confirm.addEventListener("click", () => {
+            tg.close();
+        });
     </script>
 </body>
 </html>
