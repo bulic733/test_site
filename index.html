@@ -101,7 +101,6 @@
         let tg = window.Telegram.WebApp;
         let add = document.getElementById("add_button");
         let save_wish = document.getElementById("save_wish");
-        tg.expand();
         add.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
@@ -112,28 +111,23 @@
             let name = document.getElementById("name").value;
             let description = document.getElementById("description").value;
             let url = document.getElementById("url").value;
-            let name_flag = False;
-            let descr_flag = False;
-            let url_flag = False;
 
             if(name.length < 1) {
-                name_flag = True;
+                document.getElementById("error").innerText = 'Необходимо добавить короткое название желания';
+
             }
             if(description.length < 1) {
-                descr_flag = True;
+                document.getElementById("error").innerText = 'Необходимо добавить описание желания';
+
             }
             if(url.length != 0) {
-                let const pattern = /^(https?:\/\/)?([a-z0-9-]+\.)+[a-z0-9]{2,6}(\/[^\s]*)?$/i;
+                const pattern = /^(https?:\/\/)?([a-z0-9-]+\.)+[a-z0-9]{2,6}(\/[^\s]*)?$/i;
                 if(!pattern.test(url)) {
-                    url_flag = True;
+                    document.getElementById("error").innerText = 'Укажите правильную ссылку (должна начинаться с http:// или https://';
+
                 }
             }
-
-            if(name_flag == True){
-                document.getElementById("error").innerText = 'Необходимо добавить короткое название желания';
-                //document.getElementById("error").innerText = 'Необходимо добавить описание желания';
-                //document.getElementById("error").innerText = 'Укажите правильную ссылку (должна начинаться с http:// или https://';
-            }
+            document.getElementById("error").innerText = 'QWE';
         });
     </script>
 </body>
